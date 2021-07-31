@@ -6,8 +6,10 @@ const logger = require('morgan');
 const app = express();
 
 require('dotenv').config();
+//load database
 require('./config/database');
 
+//middlewear
 app.use(logger('dev'));
 app.use(express.json());
 
@@ -19,6 +21,11 @@ app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, 'build')));
 }
 
+//API routes
+app.use('/api/users', require('./routes/api/users'));
+
+
+//React app entry point  - production only
 app.get('/*', function(req, res) {
     res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });

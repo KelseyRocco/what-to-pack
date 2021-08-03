@@ -1,17 +1,14 @@
 import React, { Component } from 'react';
-import PackingList from '../../components/PackingList/PackingList'
+import ItemList from '../../components/PackingList/ItemList';
+
 
 function Traveller(props) {
     return (
         <div className="traveller">
-            Add Traveller
-            <PackingList/>
+            <ItemList/>
         </div>
     );
 }
 
 export default Traveller;
-
-
-
 

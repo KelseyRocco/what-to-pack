@@ -46,7 +46,6 @@ class App extends Component {
             />
           }/>
           <Traveller />
-          <Places />
         </Switch>
       </div>
     )

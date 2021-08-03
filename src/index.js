@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router } from 'react-router-dom'
 
 import './Pages/Traveller/Traveller.css';
-import './components/PackingList/PackingList.css';
+import './components/PackingList/ItemList.css';
 
 ReactDOM.render(
   <React.StrictMode>

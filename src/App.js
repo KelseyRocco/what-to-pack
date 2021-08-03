@@ -37,12 +37,12 @@ class App extends Component {
         <NavBar user={this.state.user} handleLogout={this.handleLogout} />
         <Switch>
             <Route exact path='/signup' render={({ history }) => 
-            <SignupPage signup={this.handleSignupOrLogin}
+            <SignupPage handleSignupOrLogin={this.handleSignupOrLogin}
               history={history}
             />
           }/>
           <Route exact path='/login' render={() => 
-            <LoginPage login={this.handleSignupOrLogin}
+            <LoginPage handleSignupOrLogin={this.handleSignupOrLogin}
             />
           }/>
           <Traveller />

@@ -2,7 +2,7 @@ const User = require('../models/user');
 const jwt = require('jsonwebtoken');
 const SECRET = process.env.SECRET;
 
-async function signup(req, res){
+async function signup(req, res){ 
     const user = new User(req.body)
 
     try{

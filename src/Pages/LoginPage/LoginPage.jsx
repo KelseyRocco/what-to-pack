@@ -24,8 +24,10 @@ handleSubmit = async (e) => {
         // Let <App> know a user has signed up!
         this.props.handleSignupOrLogin();
         // Successfully signed up - show GamePage
-        this.props.history.push('/');
+        console.log("props console.log", this.props)
+        this.props.history.push('/main');
     } catch (err) {
+        console.log('handle submit error', err)
         // Use a modal or toast in your apps instead of alert
         alert('Invalid Credentials!');
     }

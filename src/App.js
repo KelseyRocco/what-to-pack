@@ -1,18 +1,16 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Route, Switch } from 'react-router-dom'; 
+import { Route, Switch, Redirect} from 'react-router-dom'; 
 import SignupPage from '../src/Pages/SignupPage/SignupPage';
 import LoginPage from '../src/Pages/LoginPage/LoginPage';
-// import MainPage from './Pages/Main/Main';
+import Main from './Pages/Main/Main';
 import userService from './utilities/userService';
 import NavBar from '../src/components/NavBar/NavBar';
-import Traveller from './Pages/Traveller/Traveller'
-import Places from './components/Places/Places';
-
 
 
 
 class App extends Component {
+
     constructor() {
       super();
       this.state = {
@@ -27,6 +25,7 @@ class App extends Component {
 
   handleSignupOrLogin = () => {
     this.setState({user: userService.getUser()});
+    console.log("handle signup or log in", this.state.user)
   }
 
 
@@ -37,15 +36,21 @@ class App extends Component {
         <NavBar user={this.state.user} handleLogout={this.handleLogout} />
         <Switch>
             <Route exact path='/signup' render={({ history }) => 
-            <SignupPage signup={this.handleSignupOrLogin}
+            <SignupPage handleSignupOrLogin={this.handleSignupOrLogin}
               history={history}
             />
           }/>
-          <Route exact path='/login' render={() => 
-            <LoginPage login={this.handleSignupOrLogin}
+          <Route exact path='/login' render={({history}) => 
+            <LoginPage handleSignupOrLogin={this.handleSignupOrLogin}
+            history={history}
             />
-          }/>
-          <Traveller />
+          }/> 
+          <Route exact path="/main" render={() => 
+            userService.getUser() ?
+              <Main user={this.state.user}/>
+            :
+            <Redirect to='/' />}
+          />         
         </Switch>
       </div>
     )

@@ -1,13 +1,20 @@
-// import React from 'react';
-// // import NavBar from '../../components/NavBar/NavBar'
-// import Traveller from '../../components/Traveller/Traveller'
+import React, { Component } from 'react';
+// import TripsList from '../../components/TripsList/TripsList'
+import Category from '../../components/Category/Category';
 
-// const MainPage = () => {
-//     <Traveller />
-// }
 
-// // const MainPage=(props)=> {
-// //     return <NavBar user={props.user}/>
-// // }
 
-// export default MainPage;
+
+function Main(props) {
+    return (
+        <div  className="main-css">
+                <Category/>
+                <Category/>
+                <Category/>
+                <Category/>
+                <Category/>
+        </div>
+    );
+}
+
+export default Main;

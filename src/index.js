@@ -5,8 +5,9 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router } from 'react-router-dom'
 
-import './Pages/Traveller/Traveller.css';
-import './components/PackingList/ItemList.css';
+import './components/ItemList/Item.css';
+import './components/Category/Category.css';
+import './Pages/Main/Main.css';
 
 ReactDOM.render(
   <React.StrictMode>

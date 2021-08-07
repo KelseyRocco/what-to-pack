@@ -9,6 +9,7 @@ import './components/ItemList/Item.css';
 import './components/Category/Category.css';
 import './Pages/Main/Main.css';
 
+
 ReactDOM.render(
   <React.StrictMode>
     <Router><App /></Router>

@@ -1,7 +1,7 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 
-const categorySchema = new Schema({
+const itemSchema = new Schema({
     name: {type: String, required:true}
 },
 {
@@ -9,4 +9,6 @@ const categorySchema = new Schema({
 });
 
 
-module.exports = model('Category', categorySchema);
+module.exports = model('Item', itemSchema);
+
+

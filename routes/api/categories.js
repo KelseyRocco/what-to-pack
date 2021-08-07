@@ -4,10 +4,10 @@ const Item = require("../../models/item");
 const itemsCtrl = require("../../controllers/items.js")
 
 
-router.item('/create', itemsCtrl.create)
-router.put('/update', itemsCtrl.update)
-router.delete('/del', itemsCtrl.delete)
-router.get('/all', itemsCtrl.getAllItems)
+router.category('/create', categoriesCtrl.create)
+router.put('/update', categoriesCtrl.update)
+router.delete('/del', categoiesCtrl.delete)
+router.get('/all', categoriesCtrl.getAllItems)
 
 
 

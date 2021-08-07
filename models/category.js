@@ -9,6 +9,16 @@ const itemSchema = new Schema({
 });
 
 
-module.exports = model('Item', itemSchema);
+
+const categorySchema = new Schema ({
+    name: {type: String, required:true},
+    items: [itemSchema]
+},
+{
+    timestamps: true
+});
 
 
+
+
+module.exports = model('Category', categorySchema);

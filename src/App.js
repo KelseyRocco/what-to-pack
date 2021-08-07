@@ -3,16 +3,14 @@ import './App.css';
 import { Route, Switch } from 'react-router-dom'; 
 import SignupPage from '../src/Pages/SignupPage/SignupPage';
 import LoginPage from '../src/Pages/LoginPage/LoginPage';
-// import MainPage from './Pages/Main/Main';
+import Main from './Pages/Main/Main';
 import userService from './utilities/userService';
 import NavBar from '../src/components/NavBar/NavBar';
-import Traveller from './Pages/Traveller/Traveller'
-import Places from './components/Places/Places';
-
 
 
 
 class App extends Component {
+
     constructor() {
       super();
       this.state = {
@@ -44,8 +42,10 @@ class App extends Component {
           <Route exact path='/login' render={() => 
             <LoginPage handleSignupOrLogin={this.handleSignupOrLogin}
             />
-          }/>
-          <Traveller />
+          }/> 
+          <Route exact path="/main" render={() => 
+            <Main user={this.state.user}/>}
+          />         
         </Switch>
       </div>
     )

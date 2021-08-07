@@ -1,0 +1,14 @@
+.category {
+    width: 250px;
+    border: 3px solid #FFADAD;
+    border-radius: 5px;
+    margin: 25px;
+    background-color: #FFD6A5;
+    
+}
+
+.category-background {
+    background-color: #FFD6A5;
+    margin: 3px;
+}
+

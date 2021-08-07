@@ -26,7 +26,7 @@ function Item({items, removeItem, updateItem}) {
 
     return items.map((item, index) => (
         
-        <div>
+        <div className="item">
             <div>
                 {item.text}
             </div>
@@ -39,6 +39,7 @@ function Item({items, removeItem, updateItem}) {
                     onclick={() => setEdit({id: item.id, value: item.text})}
                     className='edit-icon'
                 />
+                <input type="checkbox"></input>
             </div>
 
         

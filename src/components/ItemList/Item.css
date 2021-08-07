@@ -10,3 +10,8 @@
 .item-button {
     margin-left: 35px;
 }
+
+.item {
+    display: flex;
+    justify-content: space-between;
+}

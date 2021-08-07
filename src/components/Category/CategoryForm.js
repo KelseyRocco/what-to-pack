@@ -6,6 +6,7 @@ export default function CategoryForm() {
         <label for="category" className="select">Category</label>
 
             <select name="categories" id="category">
+            <option value="choose">Choose Category</option>
             <option value="hot">Hot Weather</option>
             <option value="cold">Cold Weather</option>
             <option value="camping">Rainy Weather</option>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Route, Switch } from 'react-router-dom'; 
+import { Route, Switch, Redirect} from 'react-router-dom'; 
 import SignupPage from '../src/Pages/SignupPage/SignupPage';
 import LoginPage from '../src/Pages/LoginPage/LoginPage';
 import Main from './Pages/Main/Main';
@@ -25,6 +25,7 @@ class App extends Component {
 
   handleSignupOrLogin = () => {
     this.setState({user: userService.getUser()});
+    console.log("handle signup or log in", this.state.user)
   }
 
 
@@ -39,12 +40,16 @@ class App extends Component {
               history={history}
             />
           }/>
-          <Route exact path='/login' render={() => 
+          <Route exact path='/login' render={({history}) => 
             <LoginPage handleSignupOrLogin={this.handleSignupOrLogin}
+            history={history}
             />
           }/> 
           <Route exact path="/main" render={() => 
-            <Main user={this.state.user}/>}
+            userService.getUser() ?
+              <Main user={this.state.user}/>
+            :
+            <Redirect to='/' />}
           />         
         </Switch>
       </div>

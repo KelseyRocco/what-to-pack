@@ -5,7 +5,6 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router } from 'react-router-dom'
 
-import './components/TripsList/TripsList.css';
 import './components/ItemList/Item.css';
 import './components/Category/Category.css';
 import './Pages/Main/Main.css';
